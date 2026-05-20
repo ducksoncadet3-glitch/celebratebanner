@@ -54,18 +54,17 @@ CelebrateBanner is a **direct-to-consumer custom photo banner builder** that let
 
 ## Deploy Workflow (for every project)
 ```
-1. Edit files in Claude Code or locally
-2. Open GitHub web editor → ducksoncadet3-glitch/<repo>
-3. Navigate to file → Edit → Select All → Paste → Commit
-4. Vercel auto-deploys (frontend) / Railway auto-deploys (backend)
+1. Open the repo in GitHub Codespaces
+2. Edit files with Claude Code (claude in the terminal)
+3. Stage and commit: git add <files> && git commit -m "..."
+4. Push to main: git push origin main
+5. Vercel auto-deploys (frontend) / Railway auto-deploys (backend)
 ```
-
-> ⚠️ Always deliver **complete, ready-to-paste files** — never partial snippets or diffs.
 
 ---
 
 ## Shared Output Specs (non-negotiable across ALL themes)
-- Sizes: **24×36 in** ($49) and **18×24 in** ($39)
+- Size: **24×36 in** (Classic $79.99 / Premium $89.98)
 - Resolution: **300 DPI**
 - Color mode: **CMYK**
 - Formats: **PDF** (print-ready + bleed) **+ JPG** (digital)
@@ -77,9 +76,11 @@ CelebrateBanner is a **direct-to-consumer custom photo banner builder** that let
 ## Pricing (DO NOT CHANGE without Printmoz confirmation)
 | Product | Price |
 |---------|-------|
-| Digital Download | $19 |
-| Printed Banner (24×36) | $49 |
-| Printed Banner (18×24) | $39 |
+| Digital Download | $9.99 |
+| Printed Banner (24×36 Classic) | $79.99 |
+| Printed Banner (24×36 Premium) | $89.98 |
+
+Shipping: **free** on all printed orders.
 
 Printmoz contact: **Dom Smith — dom@printmoz.com**
 Florida Resale Certificate (DR-13) submitted. Awaiting reseller pricing confirmation.
@@ -120,7 +121,7 @@ Florida Resale Certificate (DR-13) submitted. Awaiting reseller pricing confirma
 6. **Stripe webhook** must use raw body — never move webhook route below `express.json()`
 7. **Test before committing** — run `npm run dev` and verify frontend + backend start cleanly
 8. **Bilingual (French + Haitian Creole)** required for all Haitian Flag Day assets
-9. **Deploy via GitHub web editor** — Duckson's preferred workflow
+9. **Deploy via Codespaces + Claude Code** — edit, commit, push to main; Vercel/Railway auto-deploy
 10. **Read the project-specific CLAUDE.md** before starting any work on that campaign
 
 ---
