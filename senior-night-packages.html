@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senior Night Packages — CelebrateBanner</title>
+<meta name="description" content="Complete Senior Night packages: printed banner + digital poster + 5 social graphics per senior. One free proof, one approval.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --obsidian: #0C0E14; --obsidian2: #1B1F2C; --obsidian3: #262B38;
+  --gold: #C9A84C; --gold2: #E8C97A; --gold3: #F5E4B0; --gold-dark: #7A6020;
+  --ivory: #FAF8F3; --ivory2: #F0EDE4; --white: #FFFFFF;
+  --text: #0C0E14; --text-soft: #2F3640; --muted: #5C6370; --light: #9CA3AF;
+  --border: rgba(12,14,20,0.09); --border-strong: rgba(12,14,20,0.16);
+  --success: #2D7A4F;
+  --container: 1180px;
+  --radius: 12px; --radius-lg: 20px; --radius-xl: 28px;
+  --shadow-sm: 0 2px 8px rgba(12,14,20,0.05);
+  --shadow-md: 0 8px 28px rgba(12,14,20,0.10);
+  --shadow-lg: 0 22px 60px rgba(12,14,20,0.16);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', system-ui, -apple-system, sans-serif; color: var(--text); background: var(--ivory); margin: 0; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; line-height: 1.15; }
+
+.topbar { background: var(--obsidian2); color: rgba(250,248,243,0.75); font-size: 12.5px; padding: 7px 0; border-bottom: 1px solid rgba(201,168,76,0.10); }
+.topbar-inner { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.topbar-tag { display: inline-flex; align-items: center; gap: 8px; }
+.topbar-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold2); box-shadow: 0 0 0 3px rgba(232,201,122,0.18); }
+.topbar-email { color: var(--gold2); font-weight: 500; transition: 0.18s; }
+.topbar-email:hover { color: var(--gold3); }
+@media (max-width: 540px) { .topbar { font-size: 11.5px; padding: 5px 0; } .topbar-tag { display: none; } .topbar-inner { justify-content: center; } }
+
+.header { position: sticky; top: 0; z-index: 100; background: rgba(12,14,20,0.96); color: var(--ivory); border-bottom: 1px solid rgba(201,168,76,0.18); backdrop-filter: blur(12px); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: var(--container); margin: 0 auto; gap: 24px; }
+.logo { display: flex; align-items: center; gap: 11px; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 23px; color: var(--ivory); }
+.logo-mark { width: 38px; height: 38px; background: linear-gradient(135deg, var(--gold), var(--gold2)); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--obsidian); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 17px; box-shadow: 0 4px 12px rgba(201,168,76,0.35); }
+.logo em { color: var(--gold2); font-style: normal; }
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav a, .nav-item { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; font-size: 14px; font-weight: 500; color: rgba(250,248,243,0.85); border-radius: 8px; transition: 0.18s; cursor: pointer; background: transparent; border: none; }
+.nav a:hover, .nav-item:hover { color: var(--gold2); background: rgba(201,168,76,0.08); }
+.nav-cta { margin-left: 10px; padding: 11px 22px !important; background: var(--gold) !important; color: var(--obsidian) !important; font-weight: 700; box-shadow: 0 4px 14px rgba(201,168,76,0.30); }
+.nav-cta:hover { background: var(--gold2) !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.45); }
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu { position: absolute; top: calc(100% + 6px); left: 0; min-width: 250px; background: var(--obsidian2); border: 1px solid rgba(201,168,76,0.22); border-radius: 14px; padding: 8px; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(6px); transition: 0.16s; }
+.nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown-menu a { display: block; padding: 10px 14px; font-size: 14px; border-radius: 8px; color: rgba(250,248,243,0.88); }
+.nav-dropdown-menu a:hover { background: rgba(201,168,76,0.10); color: var(--gold2); }
+.nav-dropdown-menu a[aria-current="page"] { background: rgba(201,168,76,0.15); color: var(--gold2); }
+.dd-arrow { font-size: 10px; opacity: 0.7; }
+.mobile-toggle { display: none; padding: 10px 14px; background: transparent; border: 1px solid rgba(250,248,243,0.20); border-radius: 8px; color: var(--ivory); font-size: 14px; }
+
+.product-hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--obsidian) 0%, var(--obsidian2) 100%); color: var(--ivory); padding: 70px 0 80px; }
+.product-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(80% 60% at 50% 0%, rgba(201,168,76,0.16) 0%, transparent 60%); pointer-events: none; }
+.product-hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.product-hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; }
+.product-hero-text .breadcrumb { display: inline-flex; gap: 8px; color: rgba(250,248,243,0.55); font-size: 12.5px; margin-bottom: 22px; align-items: center; }
+.product-hero-text .breadcrumb a { color: var(--gold2); }
+.product-hero-text .breadcrumb a:hover { color: var(--gold3); }
+.product-hero-eyebrow { display: inline-block; padding: 6px 14px; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold2); background: rgba(201,168,76,0.10); border: 1px solid rgba(201,168,76,0.30); border-radius: 999px; margin-bottom: 22px; }
+.product-hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 600; margin-bottom: 18px; }
+.product-hero h1 em { font-style: italic; color: var(--gold2); }
+.product-hero-tagline { font-size: 17px; color: rgba(250,248,243,0.80); margin-bottom: 30px; max-width: 540px; }
+.product-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
+.product-hero-reassure { font-size: 13.5px; color: rgba(250,248,243,0.65); display: inline-flex; align-items: center; gap: 8px; }
+.product-hero-reassure::before { content: '✓'; color: var(--gold2); font-weight: 800; }
+.product-hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.22); border-radius: 22px; padding: 32px; backdrop-filter: blur(8px); }
+.product-hero-card-icon { width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #1A3A5C, #2D67B5); display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 22px; }
+.product-hero-card-icon svg { width: 32px; height: 32px; }
+.product-hero-card-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px dashed rgba(201,168,76,0.20); }
+.product-hero-card-row:last-child { border-bottom: none; }
+.product-hero-card-label { color: rgba(250,248,243,0.65); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+.product-hero-card-val { color: var(--gold2); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; font-size: 15px; font-weight: 600; border-radius: 10px; border: 1px solid transparent; transition: 0.18s; cursor: pointer; text-align: center; line-height: 1.2; }
+.btn-primary { background: var(--gold); color: var(--obsidian); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
+.btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(201,168,76,0.50); }
+.btn-secondary { background: transparent; color: var(--ivory); border-color: rgba(250,248,243,0.30); }
+.btn-secondary:hover { border-color: var(--gold2); color: var(--gold2); }
+.btn-lg { padding: 17px 32px; font-size: 16px; }
+.btn-arrow { transition: 0.18s; }
+.btn:hover .btn-arrow { transform: translateX(3px); }
+
+.section { padding: 80px 0; }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto 50px; }
+.section-eyebrow { display: inline-block; color: var(--gold-dark); font-size: 12px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
+.section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 600; margin-bottom: 14px; }
+.section-title em { font-style: italic; color: var(--gold-dark); }
+.section-sub { color: var(--muted); font-size: 16.5px; line-height: 1.6; }
+.section-alt { background: var(--white); }
+
+.examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+.example-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 18px 22px; transition: 0.22s; }
+.example-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(201,168,76,0.30); }
+.example-preview { position: relative; overflow: hidden; border-radius: 12px; background: linear-gradient(180deg, var(--obsidian), var(--obsidian2)); padding: 14px; box-shadow: inset 0 0 0 1px rgba(201,168,76,0.20); }
+.example-preview--team { aspect-ratio: 3/2; }
+.example-preview--grad { aspect-ratio: 3/4; }
+.example-preview--social { aspect-ratio: 1/1; }
+.example-meta { padding: 16px 4px 0; }
+.example-meta h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+.example-meta p { color: var(--muted); font-size: 13.5px; margin: 0; }
+.ex-cell { border-radius: 3px; min-height: 0; }
+.ex-grid-team { position: absolute; bottom: 14px; left: 14px; right: 14px; top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 4px; }
+.ex-team-title { position: absolute; top: 12px; left: 14px; right: 14px; color: var(--gold2); font-family: 'Cormorant Garamond', serif; font-size: 13px; font-weight: 700; text-align: center; letter-spacing: 0.08em; }
+.ex-grad-hero { position: absolute; top: 14px; left: 14px; right: 14px; height: 52%; border-radius: 6px; }
+.ex-grad-name { position: absolute; top: calc(52% + 22px); left: 14px; right: 14px; text-align: center; color: var(--gold2); font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; font-weight: 700; }
+.ex-grad-class { position: absolute; top: calc(52% + 44px); left: 14px; right: 14px; text-align: center; color: rgba(250,248,243,0.55); font-size: 9.5px; letter-spacing: 0.18em; font-weight: 600; }
+.ex-grad-collage { position: absolute; bottom: 14px; left: 14px; right: 14px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+.ex-grad-collage .ex-cell { aspect-ratio: 3/4; }
+.ex-champ-trophy { position: absolute; top: 16px; left: 0; right: 0; text-align: center; font-size: 28px; }
+.ex-champ-headline { position: absolute; top: 52px; left: 14px; right: 14px; text-align: center; color: var(--gold2); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; letter-spacing: 0.05em; }
+.ex-champ-collage { position: absolute; top: 92px; bottom: 30px; left: 14px; right: 14px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 3px; }
+.ex-champ-tag { position: absolute; bottom: 10px; left: 14px; right: 14px; text-align: center; color: rgba(250,248,243,0.55); font-size: 9px; letter-spacing: 0.18em; font-weight: 600; }
+.ex-social-photo { position: absolute; inset: 14px; border-radius: 8px; }
+.ex-social-overlay { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 12px; background: linear-gradient(0deg, rgba(12,14,20,0.92), rgba(12,14,20,0)); border-radius: 0 0 8px 8px; text-align: center; }
+.ex-social-tag { color: var(--gold2); font-size: 11px; letter-spacing: 0.18em; font-weight: 700; }
+.ex-social-year { color: var(--ivory); font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; }
+
+.includes-list { max-width: 760px; margin: 0 auto; list-style: none; padding: 0; }
+.includes-list li { display: flex; gap: 16px; padding: 18px 22px; background: var(--white); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 10px; align-items: flex-start; font-size: 15.5px; color: var(--text-soft); }
+.includes-list svg { width: 24px; height: 24px; color: var(--success); flex-shrink: 0; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 22px; }
+.step { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 22px; }
+.step-num { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--obsidian); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin-bottom: 18px; box-shadow: 0 4px 14px rgba(201,168,76,0.30); }
+.step-title { font-family: 'Outfit', sans-serif; font-size: 16.5px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+.trust-strip { background: linear-gradient(135deg, var(--obsidian), var(--obsidian2)); color: var(--ivory); border-radius: 22px; padding: 48px 40px; }
+.trust-strip-head { text-align: center; margin-bottom: 36px; }
+.trust-strip-head .section-eyebrow { color: var(--gold2); }
+.trust-strip-head h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 600; }
+.trust-strip-head h2 em { color: var(--gold2); font-style: italic; }
+.trust-strip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.trust-strip-item { display: flex; align-items: flex-start; gap: 14px; }
+.trust-strip-icon { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; background: rgba(201,168,76,0.16); display: flex; align-items: center; justify-content: center; color: var(--gold2); }
+.trust-strip-icon svg { width: 18px; height: 18px; }
+.trust-strip-text { color: rgba(250,248,243,0.85); font-size: 14.5px; font-weight: 500; }
+
+.faq { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; text-align: left; font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 600; color: var(--text); transition: 0.18s; }
+.faq-q:hover { color: var(--gold-dark); }
+.faq-icon { width: 30px; height: 30px; border-radius: 50%; background: var(--ivory2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: 0.18s; font-size: 17px; line-height: 1; color: var(--gold-dark); }
+.faq-item.open .faq-icon { background: var(--gold); color: var(--obsidian); transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.faq-item.open .faq-a { max-height: 400px; padding: 0 0 22px; }
+
+.cta-band { background: linear-gradient(135deg, var(--obsidian) 0%, var(--obsidian2) 100%); color: var(--ivory); padding: 56px 24px; text-align: center; border-radius: 24px; position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(201,168,76,0.18), transparent 70%); pointer-events: none; }
+.cta-band-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+.cta-band h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 600; margin-bottom: 14px; }
+.cta-band h2 em { color: var(--gold2); font-style: italic; }
+.cta-band p { color: rgba(250,248,243,0.75); font-size: 15.5px; margin-bottom: 26px; }
+.cta-band-reassure { margin-top: 16px; font-size: 13px; color: rgba(250,248,243,0.60); display: inline-flex; align-items: center; gap: 8px; }
+.cta-band-reassure::before { content: '✓'; color: var(--gold2); font-weight: 800; }
+
+.footer { background: var(--obsidian); color: var(--ivory); padding: 60px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,248,243,0.10); }
+.footer-brand .logo { margin-bottom: 14px; }
+.footer-tagline { color: rgba(250,248,243,0.65); font-size: 14px; line-height: 1.6; max-width: 320px; }
+.footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold2); margin: 0 0 18px; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: rgba(250,248,243,0.75); font-size: 14px; transition: 0.18s; }
+.footer-col a:hover { color: var(--gold2); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; padding-top: 26px; font-size: 13px; color: rgba(250,248,243,0.55); }
+.footer-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+
+@media (max-width: 880px) {
+  .nav { display: none; position: absolute; top: 100%; right: 24px; left: 24px; flex-direction: column; align-items: stretch; gap: 4px; background: var(--obsidian2); border: 1px solid rgba(201,168,76,0.22); border-radius: 14px; padding: 14px; box-shadow: var(--shadow-lg); }
+  .nav.open { display: flex; }
+  .nav a, .nav-item { padding: 12px 16px; }
+  .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: rgba(201,168,76,0.05); margin-top: 6px; }
+  .mobile-toggle { display: inline-flex; }
+  .nav-cta { margin: 8px 0 0; text-align: center; justify-content: center; }
+  .product-hero { padding: 50px 0 60px; }
+  .product-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .section { padding: 60px 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px 24px; }
+}
+@media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } .product-hero-actions .btn { width: 100%; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-tag">Free proof — no payment required to see your design.</span>
+    <a href="mailto:support@celebratebanner.com" class="topbar-email">support@celebratebanner.com</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="CelebrateBanner home">
+      <span class="logo-mark">C</span>
+      <span>Celebrate<em>Banner</em></span>
+    </a>
+    <button class="mobile-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰ Menu</button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <div class="nav-dropdown">
+        <button class="nav-item" aria-haspopup="true" aria-expanded="false">Products <span class="dd-arrow">▾</span></button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/team-banners.html" role="menuitem">Team Banners</a>
+          <a href="/graduation-posters.html" role="menuitem">Graduation Posters</a>
+          <a href="/championship-posters.html" role="menuitem">Championship Posters</a>
+          <a href="/social-graphics.html" role="menuitem">Social Graphics</a>
+          <a href="/senior-night-packages.html" role="menuitem" aria-current="page">Senior Night Packages</a>
+        </div>
+      </div>
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#free-proof">Free Proof</a>
+      <a href="/#faq">FAQ</a>
+      <a href="mailto:support@celebratebanner.com">Contact</a>
+      <a href="https://app.celebratebanner.com/index.html" class="nav-cta">Start Free Proof</a>
+    </nav>
+  </div>
+</header>
+
+<section class="product-hero">
+  <div class="container product-hero-inner">
+    <div class="product-hero-text">
+      <div class="breadcrumb"><a href="/">Home</a> <span>›</span> <a href="/#products">Products</a> <span>›</span> <span>Senior Night Packages</span></div>
+      <span class="product-hero-eyebrow">For schools & coaches</span>
+      <h1>Senior Night packages <em>for the entire roster</em></h1>
+      <p class="product-hero-tagline">Everything you need for Senior Night in one bundle. Each senior gets a printed banner, a digital poster, and 5 social graphics — one upload, one approval, all formats delivered.</p>
+      <div class="product-hero-actions">
+        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">Start Free Proof <span class="btn-arrow">→</span></a>
+        <a href="#examples" class="btn btn-secondary btn-lg">See Examples</a>
+      </div>
+      <div class="product-hero-reassure">No payment required to see your proof.</div>
+    </div>
+    <aside class="product-hero-card">
+      <div class="product-hero-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M19 8l2 2-2 2"/><path d="M5 8l-2 2 2 2"/></svg></div>
+      <div class="product-hero-card-row"><span class="product-hero-card-label">Product</span><span class="product-hero-card-val">Senior Night Packages</span></div>
+      <div class="product-hero-card-row"><span class="product-hero-card-label">From</span><span class="product-hero-card-val">Bundle</span></div>
+      <div class="product-hero-card-row"><span class="product-hero-card-label">Format</span><span class="product-hero-card-val" style="font-size:15px;">per senior</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt" id="examples">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Example Bundles</span>
+      <h2 class="section-title">See what a <em>Senior Night bundle</em> includes</h2>
+      <p class="section-sub">For each senior on the roster: a printed banner for the gym, a digital poster for the family, and a 5-graphic social pack for the team's feeds. All from one upload.</p>
+    </div>
+    <div class="examples-grid">
+      <article class="example-card">
+        <div class="example-preview example-preview--grad" aria-hidden="true">
+          <div class="ex-grad-hero" style="background:linear-gradient(135deg,#6B4A8F,#9171B5)"></div>
+        <div class="ex-grad-name">#12 · Senior</div>
+        <div class="ex-grad-class">PER-SENIOR BUNDLE</div>
+        <div class="ex-grad-collage">
+          <div class="ex-cell" style="background:linear-gradient(135deg,#2D67B5,#4A9ECC)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#C9A84C,#E8C97A)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#B22234,#D63951)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#5A8F6A,#84B89A)"></div>
+        </div>
+        </div>
+        <div class="example-meta"><h3>Per-Senior Bundle</h3><p>Banner + Poster + Socials</p></div>
+      </article>
+      <article class="example-card">
+        <div class="example-preview example-preview--grad" aria-hidden="true">
+          <div class="ex-grad-hero" style="background:linear-gradient(135deg,#B22234,#D63951)"></div>
+        <div class="ex-grad-name">#12 · Senior</div>
+        <div class="ex-grad-class">TEAM RECAP BANNER</div>
+        <div class="ex-grad-collage">
+          <div class="ex-cell" style="background:linear-gradient(135deg,#C9A84C,#E8C97A)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#6B4A8F,#9171B5)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#5A8F6A,#84B89A)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#1A3A5C,#2D67B5)"></div>
+        </div>
+        </div>
+        <div class="example-meta"><h3>Team Recap Banner</h3><p>All seniors on one piece</p></div>
+      </article>
+      <article class="example-card">
+        <div class="example-preview example-preview--grad" aria-hidden="true">
+          <div class="ex-grad-hero" style="background:linear-gradient(135deg,#5A8F6A,#84B89A)"></div>
+        <div class="ex-grad-name">#12 · Senior</div>
+        <div class="ex-grad-class">SENIOR-OF-THE-YEAR</div>
+        <div class="ex-grad-collage">
+          <div class="ex-cell" style="background:linear-gradient(135deg,#6B4A8F,#9171B5)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#B22234,#D63951)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#1A3A5C,#2D67B5)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#2D67B5,#4A9ECC)"></div>
+        </div>
+        </div>
+        <div class="example-meta"><h3>Senior-of-the-Year</h3><p>Spotlight bundle</p></div>
+      </article>
+      <article class="example-card">
+        <div class="example-preview example-preview--grad" aria-hidden="true">
+          <div class="ex-grad-hero" style="background:linear-gradient(135deg,#1A3A5C,#2D67B5)"></div>
+        <div class="ex-grad-name">#12 · Senior</div>
+        <div class="ex-grad-class">COACH RECOGNITION</div>
+        <div class="ex-grad-collage">
+          <div class="ex-cell" style="background:linear-gradient(135deg,#B22234,#D63951)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#5A8F6A,#84B89A)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#2D67B5,#4A9ECC)"></div>
+          <div class="ex-cell" style="background:linear-gradient(135deg,#C9A84C,#E8C97A)"></div>
+        </div>
+        </div>
+        <div class="example-meta"><h3>Coach Recognition</h3><p>Same bundle, retiring coach</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="included">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">What You Get</span>
+      <h2 class="section-title">What's Included Per Senior</h2>
+      <p class="section-sub">Each senior on your roster gets the full bundle — one design system, three deliverables, ready for the night.</p>
+    </div>
+    <ul class="includes-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 printed banner (24×36" vinyl) for the gym or field</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 digital poster (300 DPI, ready for family print/share)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>5 social media graphics (IG Square, Story, FB, TikTok, Announcement)</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Senior name, jersey number, position, and Class of personalization</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Headshot + 3–8 supporting action / memory photos per senior</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Coach quote or team note option per piece</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Bulk-order pricing: lower per-senior cost as the roster grows</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One free proof per senior — approve all before checkout</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt" id="how-it-works">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">Five steps to a <em>finished</em> senior night package</h2>
+      <p class="section-sub">No design skills, no agency markup, no waiting. You approve the proof before any payment leaves your card.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Choose Senior Night Packages</div><div class="step-desc">Pick the product and your theme to start.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Upload photos</div><div class="step-desc">Drag and drop hero + supporting shots.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Customize text</div><div class="step-desc">Add names, dates, scores, school colors.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Preview your proof</div><div class="step-desc">See your design at 300 DPI before any charge.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-title">Pay only when you approve</div><div class="step-desc">Secure checkout only after you approve.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="container">
+    <div class="trust-strip">
+      <div class="trust-strip-head">
+        <span class="section-eyebrow">Why It's Safe</span>
+        <h2>Risk-free from upload <em>to approval</em></h2>
+      </div>
+      <div class="trust-strip-grid">
+        <div class="trust-strip-item">
+          <div class="trust-strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="trust-strip-text">Free proof before you pay.</div>
+        </div>
+        <div class="trust-strip-item">
+          <div class="trust-strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="trust-strip-text">No payment required to see your proof.</div>
+        </div>
+        <div class="trust-strip-item">
+          <div class="trust-strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+          <div class="trust-strip-text">Approve your design before ordering.</div>
+        </div>
+        <div class="trust-strip-item">
+          <div class="trust-strip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div class="trust-strip-text">Secure checkout only after you approve.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title">Frequently <em>asked</em></h2>
+      <p class="section-sub">The most common questions about Senior Night Packages.</p>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How are Senior Night Packages priced? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a">Bundle pricing per senior — the more seniors on the roster, the lower the per-piece cost. Email support@celebratebanner.com with your roster size for a custom quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can the bundles all share one team-color palette? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a">Yes. Pick the team palette once on the Design step and every senior's bundle inherits it. Personal photos and names are per-senior.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">When should we order before Senior Night? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a">Order 10 business days before the ceremony for printed banners. Digital posters and socials can ship same-day; printed ships in 2–3 business days plus ground shipping.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I order one bundle as a test? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a">Absolutely. Start with one senior, approve the proof, then scale to the full roster. Same per-senior price.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if a senior's parent wants extras? <span class="faq-icon" aria-hidden="true">+</span></button>
+        <div class="faq-a">Parent-rate add-on link is available once the team bundle is placed. Email support@celebratebanner.com to set it up.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <div class="cta-band-inner">
+        <span class="product-hero-eyebrow" style="margin-bottom:14px;">Ready to start?</span>
+        <h2>Your <em>Senior Night Packages</em> proof, on the house</h2>
+        <p>Upload photos, customize text, and review the finished design before any payment.</p>
+        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">Start Free Proof <span class="btn-arrow">→</span></a>
+        <div class="cta-band-reassure">No payment required to see your proof. Approve your design before ordering.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-mark">C</span>
+          <span>Celebrate<em>Banner</em></span>
+        </a>
+        <p class="footer-tagline">Celebration banners, posters, and social graphics for teams, graduates, and championship moments. A service of CDN4 LLC, West Palm Beach, FL.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/team-banners.html">Team Banners</a></li>
+          <li><a href="/graduation-posters.html">Graduation Posters</a></li>
+          <li><a href="/championship-posters.html">Championship Posters</a></li>
+          <li><a href="/social-graphics.html">Social Graphics</a></li>
+          <li><a href="/senior-night-packages.html">Senior Night Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#free-proof">Free Proof</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="mailto:support@celebratebanner.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/returns.html">Returns</a></li>
+          <li><a href="/shipping.html">Shipping</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year">2026</span> CelebrateBanner.com · A service of CDN4 LLC · West Palm Beach, FL</div>
+      <div class="footer-legal">
+        <a href="mailto:support@celebratebanner.com">support@celebratebanner.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 880) { nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  }));
+})();
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
