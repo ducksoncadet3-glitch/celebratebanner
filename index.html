@@ -8,6 +8,67 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+═══════════════════════════════════════════════════════════════════════════
+  ANALYTICS PLACEHOLDERS · paste real IDs here when ready, then UNCOMMENT.
+  No analytics fire while this block stays wrapped in HTML comment syntax.
+═══════════════════════════════════════════════════════════════════════════
+
+  ─── 1) Google Search Console · domain ownership verification ───────────
+  Where to get the token:
+    Search Console → Settings → Ownership verification → HTML tag
+  Paste this meta tag in <head> (currently HTML-commented):
+
+    <meta name="google-site-verification" content="YOUR_GSC_TOKEN_HERE">
+
+  ─── 2) Google Analytics 4 (gtag.js) ────────────────────────────────────
+  Where to get the Measurement ID:
+    GA4 → Admin → Data Streams → Web → Measurement ID
+    (format: G followed by 10 alphanumeric chars; here written as G_MEASUREMENT_ID)
+  Paste both script blocks in <head>:
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G_MEASUREMENT_ID');
+    </script>
+
+  ─── 3) Meta (Facebook) Pixel ───────────────────────────────────────────
+  Where to get the Pixel ID:
+    Meta Events Manager → Data Sources → Pixel ID (15‑16 digits)
+  Paste this script block in <head>:
+
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_META_PIXEL_ID_HERE');
+      fbq('track', 'PageView');
+    </script>
+
+  And ALSO paste this noscript fallback right after the opening <body> tag:
+
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+═══════════════════════════════════════════════════════════════════════════
+  ACTIVATION CHECKLIST when adding real IDs:
+    [ ] Replace every YOUR_…_HERE / G_MEASUREMENT_ID with the real value
+    [ ] Move each snippet OUT of this comment wrapper
+    [ ] Move the Meta Pixel noscript img to immediately after the <body> tag
+    [ ] Apply identical IDs to every product page (team‑banners, graduation‑posters,
+        championship‑posters, social‑graphics, senior‑night‑packages)
+    [ ] Validate: GA4 Realtime view, Meta Pixel Helper, Search Console “Verified”
+═══════════════════════════════════════════════════════════════════════════
+-->
+
 <style>
 :root {
   --obsidian: #0C0E14;
@@ -294,6 +355,48 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
 
 .example-preview { padding: 0 !important; }
 .example-preview img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit; }
+
+/* ── WHY FAMILIES TRUST (Conversion Phase 1) ────────────────────────────── */
+.why-trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.why-trust-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 22px; transition: 0.22s; text-align: left; display: flex; flex-direction: column; gap: 10px; }
+.why-trust-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(201,168,76,0.30); }
+.why-trust-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(201,168,76,0.12); display: flex; align-items: center; justify-content: center; color: var(--gold-dark); }
+.why-trust-icon svg { width: 22px; height: 22px; }
+.why-trust-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin: 0; }
+.why-trust-card p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
+
+/* ── SHIELD BADGE (How Your Free Proof Works) ──────────────────────────── */
+.shield-badge { margin: 44px auto 0; max-width: 760px; display: flex; align-items: center; gap: 18px; padding: 22px 26px; background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(232,201,122,0.04)); border: 1.5px solid rgba(201,168,76,0.45); border-radius: 16px; box-shadow: 0 4px 20px rgba(201,168,76,0.10); }
+.shield-badge-icon { flex-shrink: 0; width: 52px; height: 52px; border-radius: 12px; background: linear-gradient(135deg, var(--gold), var(--gold2)); display: flex; align-items: center; justify-content: center; color: var(--obsidian); box-shadow: 0 6px 16px rgba(201,168,76,0.35); }
+.shield-badge-icon svg { width: 26px; height: 26px; }
+.shield-badge-text strong { display: block; font-family: 'Outfit', sans-serif; font-size: 15.5px; font-weight: 700; color: var(--text); }
+.shield-badge-text span { display: block; font-size: 13px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+/* ── UPGRADED PRODUCT CARDS (image + availability + dual CTAs) ─────────── */
+.product-card { padding: 0; overflow: hidden; }
+.product-card-img-link { display: block; line-height: 0; }
+.product-card-img { width: 100%; height: 220px; object-fit: cover; display: block; background: var(--obsidian); transition: 0.4s; }
+.product-card-img--social { object-fit: contain; background: linear-gradient(135deg, #1A1228, #0C0E14); }
+.product-card:hover .product-card-img { transform: scale(1.02); }
+.product-card-body { padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.product-card-body .product-name { font-size: 20px; margin: 0; }
+.product-card-body .product-desc { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
+.product-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; margin-top: 4px; border-top: 1px dashed var(--border); }
+.product-availability { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: rgba(45,122,79,0.10); color: var(--success); font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 999px; border: 1px solid rgba(45,122,79,0.20); }
+.product-availability--digital { background: rgba(107,74,143,0.12); color: #6B4A8F; border-color: rgba(107,74,143,0.25); }
+.product-availability--bundle { background: rgba(201,168,76,0.12); color: var(--gold-dark); border-color: rgba(201,168,76,0.30); }
+.product-price-block { display: inline-flex; align-items: baseline; gap: 6px; }
+.product-card-ctas { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.product-card .product-cta + .product-cta { margin-top: 0; }
+
+/* ── FOOTER TRUST STRIP ─────────────────────────────────────────────────── */
+.footer-trust-strip { display: flex; flex-wrap: wrap; gap: 22px 32px; justify-content: center; align-items: center; padding: 22px 24px; margin-bottom: 36px; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.18); border-radius: 14px; }
+.footer-trust-item { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(250,248,243,0.85); font-weight: 500; }
+.footer-trust-item svg { width: 18px; height: 18px; color: var(--gold2); flex-shrink: 0; }
+@media (max-width: 540px) {
+  .footer-trust-strip { gap: 14px 22px; padding: 18px; font-size: 12px; }
+  .shield-badge { flex-direction: column; text-align: center; padding: 22px; }
+}
 </style>
 </head>
 <body>
@@ -337,19 +440,46 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
 <!-- ─────────── HERO ─────────── -->
 <section class="hero">
   <div class="container hero-content">
-    <span class="hero-eyebrow">Celebrate The Moments That Matter</span>
-    <h1>Create Custom Celebration Banners, Posters &amp; Social Graphics <em>in Minutes</em></h1>
-    <p class="hero-sub">Upload your photos, see a free proof before you pay, and order printed or digital celebration products for teams, graduations, championships, and special events.</p>
+    <span class="hero-eyebrow">Designed in Minutes · Approved by You</span>
+    <h1>Celebrate Every Milestone with <em>Personalized Celebration Products</em></h1>
+    <p class="hero-sub">Design beautiful banners, posters, and social graphics for graduations, sports teams, championships, senior nights, and life's biggest moments.</p>
     <div class="hero-ctas">
-      <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">Start Free Proof <span class="btn-arrow">→</span></a>
-      <a href="#products" class="btn btn-secondary btn-lg">View Products</a>
+      <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">Start Your Free Proof <span class="btn-arrow">→</span></a>
+      <a href="#products" class="btn btn-secondary btn-lg">Explore Products</a>
     </div>
-    <div class="hero-reassure">No payment required to see your proof.</div>
-    <div class="trust-badges">
-      <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Free Proof Before You Pay</span>
-      <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure Checkout</span>
-      <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 4.84L20 8l-4 3.9.94 5.5L12 14.77l-4.94 2.63L8 11.9 4 8l5.61-1.16L12 2z"/></svg>Satisfaction Guarantee</span>
-      <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h12"/><circle cx="18" cy="18" r="3"/></svg>Fast Digital &amp; Print Delivery</span>
+    <div class="hero-reassure">No payment required before proof approval.</div>
+  </div>
+</section>
+
+<!-- ─────────── WHY FAMILIES TRUST (premium trust band directly below hero) ─────────── -->
+<section class="section section-alt" id="why-trust">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Why Families Trust CelebrateBanner</span>
+      <h2 class="section-title">A celebration partner you can <em>count on</em></h2>
+      <p class="section-sub">Real proof. Real people. Real print quality. Designed in minutes — printed with premium quality.</p>
+    </div>
+    <div class="why-trust-grid">
+      <article class="why-trust-card">
+        <div class="why-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Free Proof Before You Pay</h3>
+        <p>See your personalized design before spending a dollar.</p>
+      </article>
+      <article class="why-trust-card">
+        <div class="why-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Secure Checkout</h3>
+        <p>Encrypted Stripe payments. Secure Stripe checkout.</p>
+      </article>
+      <article class="why-trust-card">
+        <div class="why-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 4.84L20 8l-4 3.9.94 5.5L12 14.77l-4.94 2.63L8 11.9 4 8l5.61-1.16L12 2z"/></svg></div>
+        <h3>Printed in Premium Quality</h3>
+        <p>Sharp colors, durable materials, beautiful finishes.</p>
+      </article>
+      <article class="why-trust-card">
+        <div class="why-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <h3>U.S. Customer Support</h3>
+        <p>Real people available by email — West Palm Beach, FL.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -401,63 +531,93 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
     </div>
     <div class="products-grid">
       <article class="product-card">
-        <div class="product-icon product-icon-team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3 class="product-name"><a href="/team-banners.html">Team Banners</a></h3>
-        <p class="product-desc">Custom banners featuring your full roster. Perfect for sports teams, leagues, and clubs — printed on premium vinyl, ready to hang.</p>
-        <div class="product-meta">
-          <span class="product-price-label">From</span>
-          <span class="product-price">$39.99</span>
+        <a href="/team-banners.html" class="product-card-img-link" aria-label="View Team Banners detail page">
+          <img class="product-card-img" src="/assets/showcase/team-eagles-hero.png" alt="Team Eagles football banner sample design — landscape banner with coach photo and roster grid" loading="lazy">
+        </a>
+        <div class="product-card-body">
+          <h3 class="product-name"><a href="/team-banners.html">Team Banners</a></h3>
+          <p class="product-desc">Custom roster banners for youth teams, coaches, schools, and sports clubs — premium vinyl, ready to hang.</p>
+          <div class="product-meta">
+            <span class="product-availability">Digital + Print</span>
+            <span class="product-price-block"><span class="product-price-label">From</span><span class="product-price">$39.99</span></span>
+          </div>
+          <div class="product-card-ctas">
+            <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Start Your Free Proof →</a>
+            <a href="/team-banners.html" class="product-cta">Learn More →</a>
+          </div>
         </div>
-        <a href="/team-banners.html" class="product-cta">Learn More →</a>
-        <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Create Free Proof →</a>
       </article>
 
       <article class="product-card">
-        <div class="product-icon product-icon-grad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-        <h3 class="product-name"><a href="/graduation-posters.html">Graduation Posters</a></h3>
-        <p class="product-desc">Celebrate your grad with a luxury collage poster featuring their best moments. Class of 2026 ready — print or digital.</p>
-        <div class="product-meta">
-          <span class="product-price-label">From</span>
-          <span class="product-price">$39.99</span>
+        <a href="/graduation-posters.html" class="product-card-img-link" aria-label="View Graduation Posters detail page">
+          <img class="product-card-img" src="/assets/showcase/sarah-johnson-grad-hero.png" alt="Sarah Johnson graduation poster sample design — portrait poster with hero portrait and memory collage" loading="lazy">
+        </a>
+        <div class="product-card-body">
+          <h3 class="product-name"><a href="/graduation-posters.html">Graduation Posters</a></h3>
+          <p class="product-desc">Personalized graduation posters with hero photo, name, school, class year, and memory collage. Designed in minutes.</p>
+          <div class="product-meta">
+            <span class="product-availability">Digital + Print</span>
+            <span class="product-price-block"><span class="product-price-label">From</span><span class="product-price">$39.99</span></span>
+          </div>
+          <div class="product-card-ctas">
+            <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Start Your Free Proof →</a>
+            <a href="/graduation-posters.html" class="product-cta">Learn More →</a>
+          </div>
         </div>
-        <a href="/graduation-posters.html" class="product-cta">Learn More →</a>
-        <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Create Free Proof →</a>
       </article>
 
       <article class="product-card">
-        <div class="product-icon product-icon-champion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
-        <h3 class="product-name"><a href="/championship-posters.html">Championship Posters</a></h3>
-        <p class="product-desc">Lock in the victory. Trophy-grade posters for state champs, league winners, and tournament finalists with stadium-energy backgrounds.</p>
-        <div class="product-meta">
-          <span class="product-price-label">From</span>
-          <span class="product-price">$49.98</span>
+        <a href="/championship-posters.html" class="product-card-img-link" aria-label="View Championship Posters detail page">
+          <img class="product-card-img" src="/assets/showcase/2026-state-champs-hero.png" alt="2026 State Champions poster sample design — portrait poster with trophy and roster grid" loading="lazy">
+        </a>
+        <div class="product-card-body">
+          <h3 class="product-name"><a href="/championship-posters.html">Championship Posters</a></h3>
+          <p class="product-desc">Trophy-style posters for champions, finalists, tournaments, and winning seasons — printed with premium quality.</p>
+          <div class="product-meta">
+            <span class="product-availability">Digital + Print</span>
+            <span class="product-price-block"><span class="product-price-label">From</span><span class="product-price">$49.98</span></span>
+          </div>
+          <div class="product-card-ctas">
+            <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Start Your Free Proof →</a>
+            <a href="/championship-posters.html" class="product-cta">Learn More →</a>
+          </div>
         </div>
-        <a href="/championship-posters.html" class="product-cta">Learn More →</a>
-        <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Create Free Proof →</a>
       </article>
 
       <article class="product-card">
-        <div class="product-icon product-icon-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></div>
-        <h3 class="product-name"><a href="/social-graphics.html">Social Graphics</a></h3>
-        <p class="product-desc">Ready-to-post Instagram, Facebook, and TikTok graphics. Same hero and roster you used on print, formatted for every feed.</p>
-        <div class="product-meta">
-          <span class="product-price-label">From</span>
-          <span class="product-price">$9.99</span>
+        <a href="/social-graphics.html" class="product-card-img-link" aria-label="View Social Graphics detail page">
+          <img class="product-card-img product-card-img--social" src="/assets/showcase/team-eagles-social.png" alt="Team Eagles social media graphic sample design — 1:1 Instagram-ready square layout" loading="lazy">
+        </a>
+        <div class="product-card-body">
+          <h3 class="product-name"><a href="/social-graphics.html">Social Graphics</a></h3>
+          <p class="product-desc">Ready-to-post graphics for Instagram, Facebook, TikTok, stories, and announcements — same look across every feed.</p>
+          <div class="product-meta">
+            <span class="product-availability product-availability--digital">Digital Only</span>
+            <span class="product-price-block"><span class="product-price-label">From</span><span class="product-price">$9.99</span></span>
+          </div>
+          <div class="product-card-ctas">
+            <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Start Your Free Proof →</a>
+            <a href="/social-graphics.html" class="product-cta">Learn More →</a>
+          </div>
         </div>
-        <a href="/social-graphics.html" class="product-cta">Learn More →</a>
-        <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Create Free Proof →</a>
       </article>
 
       <article class="product-card">
-        <div class="product-icon product-icon-senior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M19 8l2 2-2 2"/><path d="M5 8l-2 2 2 2"/></svg></div>
-        <h3 class="product-name"><a href="/senior-night-packages.html">Senior Night Packages</a></h3>
-        <p class="product-desc">Everything you need for Senior Night in one bundle: printed banner, digital poster, and social graphics for each senior on the roster.</p>
-        <div class="product-meta">
-          <span class="product-price-label">From</span>
-          <span class="product-price">Bundle</span>
+        <a href="/senior-night-packages.html" class="product-card-img-link" aria-label="View Senior Night Packages detail page">
+          <img class="product-card-img" src="/assets/showcase/2026-state-champs-product.png" alt="Senior Night package sample design — bundle preview with banner, poster, and social graphics" loading="lazy">
+        </a>
+        <div class="product-card-body">
+          <h3 class="product-name"><a href="/senior-night-packages.html">Senior Night Packages</a></h3>
+          <p class="product-desc">Bundle for seniors, teams, coaches, and parents — printed banner, digital poster, and social graphics for every senior.</p>
+          <div class="product-meta">
+            <span class="product-availability product-availability--bundle">Print Bundle</span>
+            <span class="product-price-block"><span class="product-price-label">From</span><span class="product-price">$149.99</span></span>
+          </div>
+          <div class="product-card-ctas">
+            <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Start Your Free Proof →</a>
+            <a href="/senior-night-packages.html" class="product-cta">Learn More →</a>
+          </div>
         </div>
-        <a href="/senior-night-packages.html" class="product-cta">Learn More →</a>
-        <a href="https://app.celebratebanner.com/index.html" class="product-cta product-cta-primary">Create Free Proof →</a>
       </article>
     </div>
   </div>
@@ -519,56 +679,28 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
   </div>
 </section>
 
-<!-- ─────────── HOW IT WORKS ─────────── -->
+<!-- ─────────── HOW YOUR FREE PROOF WORKS ─────────── -->
 <section class="section" id="how-it-works">
   <div class="container">
     <div class="section-head">
-      <span class="section-eyebrow">How It Works</span>
-      <h2 class="section-title">Five steps to a <em>finished</em> banner</h2>
-      <p class="section-sub">No design skills, no agency markup, no waiting. You approve the proof before any payment leaves your card.</p>
+      <span class="section-eyebrow">Risk-Free Process</span>
+      <h2 class="section-title">How Your Free Proof <em>Works</em></h2>
+      <p class="section-sub">Five steps from photo upload to approved design. You pay only when you love it — printed with premium quality.</p>
     </div>
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-title">Choose a product</div><div class="step-desc">Pick the banner, poster, social graphic, or bundle that fits your celebration.</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-title">Upload photos</div><div class="step-desc">Drag and drop the team roster, the grad, the trophy — up to 50 photos.</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-title">Customize text</div><div class="step-desc">Add names, dates, scores, school colors. Live-edit in the builder.</div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-title">Preview your proof</div><div class="step-desc">See the final design rendered at 300 DPI before you commit a dollar.</div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-title">Pay only when you approve</div><div class="step-desc">Approve the proof, then check out securely. Digital files arrive in 30 seconds.</div></div>
+    <div class="steps steps-5">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Upload Photos</div><div class="step-desc">Drag and drop the team roster, the grad, the trophy. Designed in minutes.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Customize</div><div class="step-desc">Add names, dates, scores, school colors. Live-edit in the builder.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Review Your Proof</div><div class="step-desc">See your finished design rendered at 300 DPI — before any payment.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Request Changes</div><div class="step-desc">Shuffle, swap photos, change text — as many times as you like. No cost.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-title">Pay Only When You Love It</div><div class="step-desc">Secure Stripe checkout. Digital files arrive in 30 seconds; print ships fast.</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ─────────── TRUST LAYER ─────────── -->
-<section class="section section-alt" id="trust">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Trust Layer</span>
-      <h2 class="section-title">A real company, <em>built to be trusted</em></h2>
-      <p class="section-sub">Every order is backed by real U.S. support, secure checkout, and a clear satisfaction guarantee. Here is what that looks like.</p>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div>
-        <div><div class="trust-title">A service of CDN4 LLC</div><div class="trust-text">Real Florida-registered LLC operating CelebrateBanner — not a marketplace passthrough.</div></div>
+    <div class="shield-badge">
+      <div class="shield-badge-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div><div class="trust-title">Secure checkout</div><div class="trust-text">Stripe-powered card processing. Secure checkout only after you approve.</div></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div><div class="trust-title">Satisfaction guarantee</div><div class="trust-text">If something is wrong with your order, we make it right. Period.</div></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-        <div><div class="trust-title">U.S. support</div><div class="trust-text">West Palm Beach, FL based team. Email support 7 days a week.</div></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <div><div class="trust-title">Clear delivery timeline</div><div class="trust-text">Digital: ~30 seconds. Print: 2–3 business days production, ground shipping.</div></div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-7-9-7-9 7 9 7z"/><path d="M12 12v8"/></svg></div>
-        <div><div class="trust-title">No design skills required</div><div class="trust-text">Upload photos, type names, click approve. Our engine handles the layout.</div></div>
+      <div class="shield-badge-text">
+        <strong>No payment required before proof approval.</strong>
+        <span>Your card is never charged until you've seen, reviewed, and approved your design.</span>
       </div>
     </div>
   </div>
@@ -581,9 +713,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
       <div class="proof-content">
         <span class="hero-eyebrow" style="margin-bottom:18px;">Risk-Free</span>
         <h2>See Your Design <em>Before You Pay</em></h2>
-        <p>We create your preview first. You only place the order after you see and approve your design — no card required to start. <strong>Approve your design before ordering.</strong></p>
-        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">Start My Free Proof <span class="btn-arrow">→</span></a>
-        <div class="reassure-line">No payment required to see your proof.</div>
+        <p>We create your preview first. You only place the order after you see and approve your design — no card required to start. <strong>No payment required before proof approval.</strong></p>
+        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary btn-lg">See My Free Proof <span class="btn-arrow">→</span></a>
+        <div class="reassure-line">Designed in minutes. Secure Stripe checkout only after you approve.</div>
       </div>
     </div>
   </div>
@@ -602,7 +734,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
         <span class="bundle-tag">Best Value</span>
         <h3 class="bundle-title">Team Celebration <em>Bundle</em></h3>
         <p class="bundle-sub">One upload session. One approval. Everything you need to celebrate a championship season — printed banner, digital poster, and ready-to-post social graphics for the whole feed.</p>
-        <p class="bundle-price bundle-price--cta">Request your free bundle proof<span class="bundle-price-meta">No payment required to see your proof. Approve your design before ordering.</span></p>
+        <p class="bundle-price bundle-price--cta">Request your free bundle proof<span class="bundle-price-meta">No payment required before proof approval. Printed with premium quality.</span></p>
       </div>
       <div class="bundle-right">
         <h3>Includes</h3>
@@ -611,7 +743,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 digital poster (300 DPI, CMYK)</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>5 social media graphics (IG, FB, TikTok)</li>
         </ul>
-        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary">Start Bundle Proof <span class="btn-arrow">→</span></a>
+        <a href="https://app.celebratebanner.com/index.html" class="btn btn-primary">Start Your Free Proof <span class="btn-arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -657,6 +789,28 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; margin: 0; l
 <!-- ─────────── FOOTER ─────────── -->
 <footer class="footer" id="contact">
   <div class="container">
+    <div class="footer-trust-strip">
+      <div class="footer-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-4 7-12V5l-7-3-7 3v5c0 8 7 12 7 12z"/></svg>
+        <span>Florida-based business</span>
+      </div>
+      <div class="footer-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Secure Stripe payments</span>
+      </div>
+      <div class="footer-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span>Fast digital delivery</span>
+      </div>
+      <div class="footer-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.39 4.84L20 8l-4 3.9.94 5.5L12 14.77l-4.94 2.63L8 11.9 4 8l5.61-1.16L12 2z"/></svg>
+        <span>Premium print quality</span>
+      </div>
+      <div class="footer-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Email support</span>
+      </div>
+    </div>
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
