@@ -1,4 +1,17 @@
 node_modules/
 package-lock.json
 package.json
-*.png
+
+# Local development screenshots
+app_scn*.png
+flow_*.png
+preview_*.png
+marketing_picker_*.png
+integration_*.png
+v2_*.png
+v3_*.png
+home*.png
+revenue_pg4_full.png
+
+# Local HTML test file
+home.html
